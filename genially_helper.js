@@ -73,4 +73,21 @@ function show_on_overlap(label1, label2, hide){
 	let checker = setInterval(check, 300);
 }
 
+function hide_by_label(label){
+	find_by_label(label).style.visibility = "hidden";
+}
 
+function show_when_all_hidden(label1, labels){
+	let obj1 = find_by_label(label1);
+	let objs = labels.map(find_by_label);
+
+	function check(){
+		if (objs.every(obj => obj.style.visibility == "hidden")){
+			obj1.style.visibility = "visible";
+			clearInterval(checker);
+		}
+	}
+
+	let checker = setInterval(check, 300);
+
+}

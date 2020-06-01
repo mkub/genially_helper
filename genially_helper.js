@@ -73,5 +73,4 @@ function show_on_overlap(label1, label2, hide){
 	let checker = setInterval(check, 300);
 }
 
-hide_on_overlap("object-A", "object-A1", "object-A1");
 
